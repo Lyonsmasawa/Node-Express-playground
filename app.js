@@ -42,3 +42,6 @@ console.log(names)
 const sayHi = require('./utils')
 sayHi(names.lyons)
 sayHi(names.mode)
+
+// mind grenade
+require('./mind-grenade')
