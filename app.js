@@ -170,3 +170,16 @@ server.listen(5000) //set up port
 // package-lock.json
 // stores the specific version for all the packages 
 
+// EVENT LOOP
+// - allows node.js to perform non-blocking I/O operations - despite the fact that javascript is single-threaded -- by offloading operations to the system kernel whenever possible.
+
+// EVENT LOOP
+// if a request is a time consuming event the event loop registers the callback(what should happen when the operation is complete) - so once the operation is complete is when the callback is executed. 
+// in simple terms we complete the next immediate task and when we have time execute the time consuming operation.
+// asynchronous functions are offloaded to the end and once we complete the next tasks they are executed.
+// asynchronous functions stay alive unless killed
+    // console.log("Event loop")
+    // setInterval(() => {
+    //     console.log("server listening on port 100000")
+    // }, 1000);
+    // console.log("I will run before the asynchronous function above me")
