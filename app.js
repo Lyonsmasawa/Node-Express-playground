@@ -196,6 +196,7 @@ const server2 = http.createServer((req, res) => {
         return
     }
     if (req.url === '/about') {
+        // BLOCKING CODE - blocks other user till it is complete
         for (let i = 0; i < 1000; i++) {
             for (let i = 0; i < 1000; i++) {
                 console.log(`${i} ${j}`)
