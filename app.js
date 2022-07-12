@@ -243,3 +243,22 @@ const start = async() => {
 }
 
 start()
+
+// NODES NATIVE OPTION
+//  node has a util module which has a method by the name promisify
+const util = require("util")
+const readFilePromise = util.promisify(readFile)
+const writeFilePromise = util.promisify(writeFile)
+
+const startNative = async() => {
+    try {
+     const first = await readFilePromise('./content/first.txt', 'utf8')
+     const second = await readFilePromise('./content/second.txt', 'utf8')
+     await writeFilePromise('./content/result-mind-grenade.txt', `THIS WORKS: ${first} & ${second}`)
+     console.log(`Native: I async awaited ${first} then ${second}`) 
+    } catch (error) {
+     console.log(error)
+    }
+ }
+ 
+ startNative()
