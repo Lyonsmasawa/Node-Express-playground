@@ -125,9 +125,28 @@ readFile('./content/first.txt', 'utf8', (err, result) => {
 const http = require('http'); 
 
 const server = http.createServer((req, res) => {
-    res.write('Welcome o our Home Page')
-    res.end()
+    // console.log(req)
+    if (req.url === '/') {
+        res.write('Welcome to our Home Page')
+        res.end()
+        return
+    }
+    if (req.url === '/about') {
+        res.end('About Us')
+        
+    }
+    res.end(`
+        <h1>Oops!</h1>
+        <p>Page not found</p>
+        <a href="/">back</a>
+    `)
 }) //set up server
 
 server.listen(5000) //set up port
 
+
+// NPM 
+// NPM --VERSION
+
+// install for specific project - npm i name
+// global - any project - npm install -g name
