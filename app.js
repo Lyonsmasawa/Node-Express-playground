@@ -159,3 +159,14 @@ server.listen(5000) //set up port
 
 // NODEMON
 // npm i nodemon - watch our files and restart our app for us instead of manual -D or -save-dev o install as a development dependency coz we don't need it in production  
+
+// delete package
+// npm uninstall name or  delete node modules folder and package-lock and then edit package.
+
+// global install
+// npm install -g nodemon
+    // nodemon app.js
+    
+// package-lock.json
+// stores the specific version for all the packages 
+
