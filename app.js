@@ -48,3 +48,12 @@ require('./mind-grenade')
 
 // BUILT-IN MODULES
 // for example => os, path, fs, http
+
+// OS module - no need to install since it is inbuilt
+const os = require('os')
+
+// info about current user
+const user = os.userInfo()
+console.log(user)
+
+// method returns system uptime in seconds
