@@ -79,3 +79,9 @@ console.log(base)
 
 const absolute = path.resolve(__dirname,'content','subfolder','text.txt')
 console.log(absolute)
+
+// File System Module ( Sync and Async)
+// sync
+const { readFileSync, writeFileSync } = require('fs')
+
+
