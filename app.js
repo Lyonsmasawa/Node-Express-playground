@@ -262,3 +262,7 @@ const startNative = async() => {
  }
  
  startNative()
+
+//  EVENTS INFO
+    // - Event driven programming
+    // - used heavily in node js
