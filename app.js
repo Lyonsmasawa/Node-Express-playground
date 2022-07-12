@@ -235,7 +235,8 @@ getText('./content/first.txt').then((result) => {
 const start = async() => {
    try {
     const first = await getText('./content/first.txt')
-    console.log(`I async awaited ${first}`) 
+    const second = await getText('./content/second.txt')
+    console.log(`I async awaited ${first} then ${second}`) 
    } catch (error) {
     console.log(error)
    }
