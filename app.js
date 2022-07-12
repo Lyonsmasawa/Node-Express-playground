@@ -151,7 +151,7 @@ server.listen(5000) //set up port
 // install for specific project - npm i name - local dependencies
 // global - any project - npm install -g name
 
-// package.json - manifest file (stores important info about project/package)
+// package.json - manifest file (stores important info about project/package) - npm install install all these dependencies
 // - manually create package.json in the root, create properties etc
 // -or automate - npm init (step by step) or - npm init -y (everything default)
 // access the packages installed
