@@ -22,11 +22,11 @@ else {
 
 console.log(__dirname)
 console.log(__filename)
-console.log(require)
-console.log(module)
-console.log(process)
+// console.log(require)
+// console.log(module)
+// console.log(process)
 
-// we also have setTimeOut and setInterval
-setInterval(() => {
-    console.log("hello world")
-}, 1000)
+// // we also have setTimeout and setInterval
+// setInterval(() => {
+//     console.log("hello world")
+// }, 100000000)
