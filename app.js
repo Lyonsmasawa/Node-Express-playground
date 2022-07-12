@@ -34,5 +34,5 @@ console.log(__filename)
 // MODULES - encapsulated code (only share minimum)
 // Node uses CommonJS, every file is module (by default)
 // You can split code to different files a.k.a modules but still execute one main file.
-sayHi('Lyons')
-sayHi('Lyons')
+sayHi(lyons)
+sayHi(mode)
