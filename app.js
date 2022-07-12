@@ -266,3 +266,8 @@ const startNative = async() => {
 //  EVENTS INFO
     // - Event driven programming
     // - used heavily in node js
+
+    const EventEmitter = require('events');
+    const customEmitter = new EventEmitter();
+
+    
