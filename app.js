@@ -300,8 +300,15 @@ const startNative = async() => {
         console.log(err)
     })
     
-    // var fs = require('fs')
-    // http.createServer((req, res) => {
-    //     const text = fs.readFileSync('./content/big.txt', 'utf8')
-    //     return res.end(text)
-    // }).listen(5001)
+    var fs = require('fs')
+    http.createServer((req, res) => {
+        // const text = fs.readFileSync('./content/big.txt', 'utf8')  //sends as one large file
+        // return res.end(text)
+        const fileStream = fs.createReadStream('./content/big.txt', 'utf8')
+        fileStream.on('open', ()=>{ //sends in chunks
+            fileStream.pipe(res) //pipe pushes from read stream to write stream
+        })
+        fileStream.on('error', (err)=>{
+          res.end(err);  
+        })
+    }).listen(5001)
