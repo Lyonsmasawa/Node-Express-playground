@@ -39,5 +39,6 @@ console.log(__filename)
 const names = require('./names')
 console.log(names)
 
-// sayHi(lyons)
-// sayHi(mode)
+const sayHi = require('./utils')
+sayHi(lyons)
+sayHi(mode)
