@@ -230,3 +230,15 @@ const getText = (path) => {
 getText('./content/first.txt').then((result) => {
     console.log(`I promised ${result}`) 
 }).catch((err) => {console.log(err)})
+
+// add ASYNC AWAIT - always wrap this in a try catch block incase something goes wrong
+const start = async() => {
+   try {
+    const first = await getText('./content/first.txt')
+    console.log(`I async awaited ${first}`) 
+   } catch (error) {
+    console.log(error)
+   }
+}
+
+start()
