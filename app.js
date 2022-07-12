@@ -156,3 +156,6 @@ server.listen(5000) //set up port
 // -or automate - npm init (step by step) or - npm init -y (everything default)
 // access the packages installed
         // const _ = require('bootstrap')
+
+// NODEMON
+// npm i nodemon - watch our files and restart our app for us instead of manual -D or -save-dev o install as a development dependency coz we don't need it in production  

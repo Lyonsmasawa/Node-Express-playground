@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Lyonsmasawa/Node-Express-playground/issues"
   },
-  "homepage": "https://github.com/Lyonsmasawa/Node-Express-playground#readme"
+  "homepage": "https://github.com/Lyonsmasawa/Node-Express-playground#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
