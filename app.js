@@ -271,12 +271,12 @@ const startNative = async() => {
     const EventEmitter = require('events');
     const customEmitter = new EventEmitter();
 
-    customEmitter.on('response', ()=>{
-        console.log(`data received `)
+    customEmitter.on('response', (name)=>{
+        console.log(`data received from ${name}`)
     })
 
     customEmitter.on('response', ()=>{
         console.log(`some other logic `)
     })
 
-    customEmitter.emit('response')
+    customEmitter.emit('response', 'Lyons', 10) //can pass arguments
