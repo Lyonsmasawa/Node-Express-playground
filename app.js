@@ -34,7 +34,6 @@ console.log(__filename)
 // MODULES - encapsulated code (only share minimum)
 // Node uses CommonJS, every file is module (by default)
 // You can split code to different files a.k.a modules but still execute one main file.
-const SECRET = 'SUPER SECRET'
 const sayHi = (name) => {
     console.log(`Hello There ${name}`)
 }
