@@ -266,12 +266,17 @@ const startNative = async() => {
 //  EVENTS INFO
     // - Event driven programming
     // - used heavily in node js
+    // order matters - listen first then emit
 
     const EventEmitter = require('events');
     const customEmitter = new EventEmitter();
 
     customEmitter.on('response', ()=>{
         console.log(`data received `)
+    })
+
+    customEmitter.on('response', ()=>{
+        console.log(`some other logic `)
     })
 
     customEmitter.emit('response')
