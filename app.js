@@ -116,3 +116,8 @@ readFile('./content/first.txt', 'utf8', (err, result) => {
         })
     })
 })
+
+// ASYNC VS SYNC
+// sync -- it wont serve other users if the synchronous tasks are not yet complete and in order
+// async -- continues with code while another task is still being processed
+
