@@ -57,3 +57,4 @@ const user = os.userInfo()
 console.log(user)
 
 // method returns system uptime in seconds
+console.log(`the system uptime is ${os.uptime()} seconds`)
