@@ -66,3 +66,8 @@ const currentOS = {
     freeMem: os.freemem(),
 }
 console.log(currentOS)
+
+// Path Module
+const path = require('path')
+
+console.log(path.sep)
