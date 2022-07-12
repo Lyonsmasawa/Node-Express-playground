@@ -299,3 +299,9 @@ const startNative = async() => {
     stream.on('error', err => {
         console.log(err)
     })
+    
+    // var fs = require('fs')
+    // http.createServer((req, res) => {
+    //     const text = fs.readFileSync('./content/big.txt', 'utf8')
+    //     return res.end(text)
+    // }).listen(5001)
