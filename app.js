@@ -281,4 +281,10 @@ const startNative = async() => {
 
     customEmitter.emit('response', 'Lyons', 10) //can pass arguments
 
+//  Streams Intro
+    // at its simplest streams are used to write or read sequentially
+    // - in node we have 4 diff types - writable, readable, duplex(both r & w), transform(modify)
+    // - extends emitter class
+
+    // READ FILE
     
