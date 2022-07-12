@@ -1,5 +1,10 @@
+// local
 const SECRET = 'SUPER SECRET'
+
+// share
 const lyons = 'LYONS'
 const mode = 'Modules'
 
-console.log(module)
+// export
+module.exports = {lyons, mode}
+console.log(module) 
