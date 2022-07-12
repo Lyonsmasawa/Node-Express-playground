@@ -183,3 +183,33 @@ server.listen(5000) //set up port
     //     console.log("server listening on port 100000")
     // }, 1000);
     // console.log("I will run before the asynchronous function above me") 
+
+// ASYNC Patterns
+// it is good because we are not blocking code, but the problem is if we are using this callback approach it gets messy real quick and what another user is doing in the app can affect 
+// the other users i.e the other pages will keep loading till the one user with an asynchronous operation is done executing.
+// watch this practically
+
+const server2 = http.createServer((req, res) => {
+    if (req.url === '/') {
+        res.write('Welcome to our Home Page')
+        res.end()
+        return
+    }
+    if (req.url === '/about') {
+        for (let i = 0; i < 1000; i++) {
+            for (let i = 0; i < 1000; i++) {
+                console.log(`${i} ${j}`)
+            }
+        }  
+        res.end('About Us')      
+    }
+    res.end(`
+        <h1>Oops!</h1>
+        <p>Page not found</p>
+        <a href="/">back</a>
+    `)
+})
+
+server2.listen(5001, ()=> {
+    console.log('Server listening on port 5001...')
+})
