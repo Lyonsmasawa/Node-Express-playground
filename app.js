@@ -154,3 +154,5 @@ server.listen(5000) //set up port
 // package.json - manifest file (stores important info about project/package)
 // - manually create package.json in the root, create properties etc
 // -or automate - npm init (step by step) or - npm init -y (everything default)
+// access the packages installed
+        // const _ = require('bootstrap')
