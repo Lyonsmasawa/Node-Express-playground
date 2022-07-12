@@ -30,3 +30,14 @@ console.log(__filename)
 // setInterval(() => {
 //     console.log("hello world")
 // }, 100000000)
+
+// MODULES - encapsulated code (only share minimum)
+// Node uses CommonJS, every file is module (by default)
+// You can split code to different files a.k.a modules but still execute one main file.
+const SECRET = 'SUPER SECRET'
+const sayHi = (name) => {
+    console.log(`Hello There ${name}`)
+}
+
+sayHi('Lyons')
+sayHi('Lyons')
