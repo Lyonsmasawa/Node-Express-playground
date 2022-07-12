@@ -228,5 +228,5 @@ const getText = (path) => {
 }
 
 getText('./content/first.txt').then((result) => {
-    console.log(`I promised ${result}`)
+    console.log(`I promised ${result}`) 
 }).catch((err) => {console.log(err)})
