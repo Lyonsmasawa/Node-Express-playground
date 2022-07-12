@@ -188,29 +188,45 @@ server.listen(5000) //set up port
 // it is good because we are not blocking code, but the problem is if we are using this callback approach it gets messy real quick and what another user is doing in the app can affect 
 // the other users i.e the other pages will keep loading till the one user with an asynchronous operation is done executing.
 // watch this practically
+        // const server2 = http.createServer((req, res) => {
+        //     if (req.url === '/') {
+        //         res.write('Welcome to our Home Page')
+        //         res.end()
+        //         return
+        //     }
+        //     if (req.url === '/about') {
+        //         // BLOCKING CODE - blocks other user till it is complete
+        //         for (let i = 0; i < 10; i++) {
+        //             for (let j = 0; j < 3000; j++) { 
+        //                 console.log(`${i} ${j}`)
+        //             }
+        //         }  
+        //         return res.end('About Us')    
+        //     }
+        //     res.end(`
+        //         <h1>Oops!</h1>
+        //         <p>Page not found</p>
+        //         <a href="/">back</a> 
+        //     `)
+        // })
 
-const server2 = http.createServer((req, res) => {
-    if (req.url === '/') {
-        res.write('Welcome to our Home Page')
-        res.end()
-        return
-    }
-    if (req.url === '/about') {
-        // BLOCKING CODE - blocks other user till it is complete
-        for (let i = 0; i < 3000; i++) {
-            for (let i = 0; i < 3000; i++) { 
-                console.log(`${i} ${j}`)
+        // server2.listen(5001, ()=> {
+        //     console.log('Server listening on port 5001...')
+        // })
+
+// BETTER WAY to write this code is setting Up PROMISES.
+const getText = (path) => {
+    return new Promise((resolve, reject) => {
+        readFile(path, 'utf8', (err, data) => {
+            if(err) {
+                reject(err);
+            } else {
+                resolve(data)
             }
-        }  
-        res.end('About Us')      
-    }
-    res.end(`
-        <h1>Oops!</h1>
-        <p>Page not found</p>
-        <a href="/">back</a>
-    `)
-})
+        })
+    })
+}
 
-server2.listen(5001, ()=> {
-    console.log('Server listening on port 5001...')
-})
+getText('./content/first.txt').then((result) => {
+    console.log(`I promised ${result}`)
+}).catch((err) => {console.log(err)})
