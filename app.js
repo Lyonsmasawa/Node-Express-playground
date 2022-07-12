@@ -40,5 +40,5 @@ const names = require('./names')
 console.log(names)
 
 const sayHi = require('./utils')
-sayHi(lyons)
-sayHi(mode)
+sayHi(names.lyons)
+sayHi(names.mode)
