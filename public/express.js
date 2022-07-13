@@ -130,6 +130,13 @@ const app = express()
 
 // Middlewares - major
 // req => middleware => res
+app.get('/', (req, res) => {
+    res.send("home")
+})
+
+app.get('/about', (req, res) => {
+    res.send("about")
+})
 
 app.listen(5007, () => {
     console.log(5007)
