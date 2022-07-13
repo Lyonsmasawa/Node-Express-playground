@@ -28,7 +28,7 @@ const app = express()
     const path = require('path')
     
     app.use(express.static('./public')) // niiiicccceeee - convention of calling the folder public - no setting up url for each static file plus the content type and so on - express.static is a middleware made for this
-    // static files are files that the server doesnt have to change e.g images, stylesheets and js(makes dynamic on browser but on server side it is just a static).
+    // static files are files that the server doesnt have to change e.g images, stylesheets and js(dynamic on browser but on server side static).
 
     app.get('/', (req, res) => {
         res.sendFile(path.resolve(__dirname,'../http.html'))
