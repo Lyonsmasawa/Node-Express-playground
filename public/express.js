@@ -35,9 +35,9 @@ const app = express()
         // you can just dump all the html to static files folder and by default the index.html is the root and will be sent when a user hits the page so we dont have to even set it up - has to be named index
     // })
 
-    app.all('*', (req, res) => {
-        res.status(404).send('<h1>Oops! not found</h1>')
-    })
+    // app.all('*', (req, res) => {
+    //     res.status(404).send('<h1>Oops! not found</h1>')
+    // })
 
 app.listen(5005, () => {
     console.log("server running on 5005...")
@@ -49,3 +49,15 @@ app.listen(5005, () => {
 // - data is sent using JSON and we will use res.json() which will set up proper content type and stringify our data and the other flavour we have is ssr where we set up templates and send back entire html and css and js ourselves using res.render() method
         // API - json, send data, res.json
         // SSR - template, send template, res.render()
+
+// API 
+// - any front end app can access our data by making a request and use it. send in form of JSON
+//  JSON basics
+
+    app.get('/data', (req, res) => {
+        res.json([{name:'Lyons'}, {name: 'Albert'}])
+    })
+
+    app.listen(5007, () => {
+        console.log(5007)
+    })
