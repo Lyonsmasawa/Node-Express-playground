@@ -64,7 +64,7 @@ const app = express()
     //     res.json(products)
     // })
 
-    // Params, Query string
+    // Params
     app.get('/api/products', (req, res) => {
         // res.json(products) // sends everything
         const newProducts = products.map((product) => {
@@ -73,6 +73,21 @@ const app = express()
         })
         res.json(newProducts); // sends specific details
     })
+
+    // route params
+        // simple logic
+        // app.get('/api/products/1', (req, res) => {
+        //     // res.json(products) // sends everything
+        //     const singleProduct = products.find((product) => product.id == 1)
+        //     res.json(singleProduct); // sends specific details
+        // })
+
+        // advanced
+        app.get('/api/products/1', (req, res) => {
+            // res.json(products) // sends everything
+            const singleProduct = products.find((product) => product.id == 1)
+            res.json(singleProduct); // sends specific details
+        })
 
     app.listen(5007, () => {
         console.log(5007)
