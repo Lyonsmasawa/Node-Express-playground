@@ -100,7 +100,10 @@ const app = express()
         })
 
     // Query parameters - used to send small amounts of info to the server using urls
-        
+        app.get('/api/v1/query', (req,res) => {
+            console.log("query")
+            res.send("query works")
+        })
 
     app.listen(5007, () => {
         console.log(5007)
