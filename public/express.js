@@ -53,76 +53,84 @@ const app = express()
 // API 
 // - any front end app can access our data by making a request and use it. send in form of JSON
 //  JSON basics
-    const {products} = require('./data')
+        // const {products} = require('./data')
 
-    app.get('/', (req, res) => {
-        res.send('<h1>Home Page </h1><a href="/api/products"/>Products</a>')
-    })
-
-    // app.get('/data', (req, res) => {
-    //     // res.json([{name:'Lyons'}, {name: 'Albert'}])
-    //     res.json(products)
-    // })
-
-    // Params
-    app.get('/api/products', (req, res) => {
-        // res.json(products) // sends everything
-        const newProducts = products.map((product) => {
-            const {id, name, image} = product;
-            return {id, name, image}
-        })
-        res.json(newProducts); // sends specific details
-    })
-
-    // route params
-        // simple logic
-        // app.get('/api/products/1', (req, res) => {
-        //     // res.json(products) // sends everything
-        //     const singleProduct = products.find((product) => product.id === 1)
-        //     res.json(singleProduct); // sends specific details
+        // app.get('/', (req, res) => {
+        //     res.send('<h1>Home Page </h1><a href="/api/products"/>Products</a>')
         // })
 
-        // advanced
-        app.get('/api/products/:productID', (req, res) => {
-            // res.json(products) // sends everything
-            console.log(req.params)
-            const {productID} = req.params
-            const singleProduct = products.find((product) => product.id === Number(productID))
-            if (!singleProduct) {
-                return res.status(404).send("Oops! not found")
-            }
-            return res.json(singleProduct); // sends specific details
-        })
+        // // app.get('/data', (req, res) => {
+        // //     // res.json([{name:'Lyons'}, {name: 'Albert'}])
+        // //     res.json(products)
+        // // })
 
-        app.get('/api/products/:productID/reviews/:reviewID', (req, res) => {
-            console.log(req.params)
-            res.send("awesome")
-        })
+        // // Params
+        // app.get('/api/products', (req, res) => {
+        //     // res.json(products) // sends everything
+        //     const newProducts = products.map((product) => {
+        //         const {id, name, image} = product;
+        //         return {id, name, image}
+        //     })
+        //     res.json(newProducts); // sends specific details
+        // })
 
-    // Query parameters - used to send small amounts of info to the server using urls
-        app.get('/api/v1/query', (req,res) => {
-            console.log(req.query)
-            const {search, limit} = req.query
-            let sortedProducts = [...products]
+        // // route params
+        //     // simple logic
+        //     // app.get('/api/products/1', (req, res) => {
+        //     //     // res.json(products) // sends everything
+        //     //     const singleProduct = products.find((product) => product.id === 1)
+        //     //     res.json(singleProduct); // sends specific details
+        //     // })
 
-            if (search) {
-                sortedProducts = sortedProducts.filter((product) => {
-                    return product.name.startsWith(search)
-                })
-            }
+        //     // advanced
+        //     app.get('/api/products/:productID', (req, res) => {
+        //         // res.json(products) // sends everything
+        //         console.log(req.params)
+        //         const {productID} = req.params
+        //         const singleProduct = products.find((product) => product.id === Number(productID))
+        //         if (!singleProduct) {
+        //             return res.status(404).send("Oops! not found")
+        //         }
+        //         return res.json(singleProduct); // sends specific details
+        //     })
 
-            if (limit) {
-                sortedProducts = sortedProducts.slice(0, Number(limit))
-            }
+        //     app.get('/api/products/:productID/reviews/:reviewID', (req, res) => {
+        //         console.log(req.params)
+        //         res.send("awesome")
+        //     })
 
-            if (sortedProducts < 1) {
-                // res.status(200).send('no products match your search')
-                return res.status(200).json({success: true, data: []}) // common approach
-            }
+        // // Query parameters - used to send small amounts of info to the server using urls
+        //     app.get('/api/v1/query', (req,res) => {
+        //         console.log(req.query)
+        //         const {search, limit} = req.query
+        //         let sortedProducts = [...products]
 
-            res.status(200).json(sortedProducts)
-        })
+        //         if (search) {
+        //             sortedProducts = sortedProducts.filter((product) => {
+        //                 return product.name.startsWith(search)
+        //             })
+        //         }
 
-    app.listen(5007, () => {
-        console.log(5007)
-    })
+        //         if (limit) {
+        //             sortedProducts = sortedProducts.slice(0, Number(limit))
+        //         }
+
+        //         if (sortedProducts < 1) {
+        //             // res.status(200).send('no products match your search')
+        //             return res.status(200).json({success: true, data: []}) // common approach
+        //         }
+
+        //         res.status(200).json(sortedProducts)
+        //     })
+
+        // app.listen(5007, () => {
+        //     console.log(5007)
+        // })
+
+
+// Middlewares - major
+// req => middleware => res
+
+app.listen(5007, () => {
+    console.log(5007)
+})
