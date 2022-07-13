@@ -21,5 +21,8 @@
   "homepage": "https://github.com/Lyonsmasawa/Node-Express-playground#readme",
   "devDependencies": {
     "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
   }
 }
