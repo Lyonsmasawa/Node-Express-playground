@@ -83,8 +83,9 @@ const app = express()
         // })
 
         // advanced
-        app.get('/api/products/1', (req, res) => {
+        app.get('/api/products/:productID', (req, res) => {
             // res.json(products) // sends everything
+            console.log(req.params)
             const singleProduct = products.find((product) => product.id == 1)
             res.json(singleProduct); // sends specific details
         })
