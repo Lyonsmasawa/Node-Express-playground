@@ -88,7 +88,10 @@ const app = express()
             console.log(req.params)
             const {productID} = req.params
             const singleProduct = products.find((product) => product.id === Number(productID))
-            res.json(singleProduct); // sends specific details
+            if (!singleProduct) {
+                return res.status(404).send("Oops! not found")
+            }
+            return res.json(singleProduct); // sends specific details
         })
 
     app.listen(5007, () => {
