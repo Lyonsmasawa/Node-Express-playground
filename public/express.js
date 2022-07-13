@@ -94,6 +94,11 @@ const app = express()
             return res.json(singleProduct); // sends specific details
         })
 
+        app.get('/api/products/:productID/reviews/:reviewID', (req, res) => {
+            console.log(req.params)
+            res.send("awesome")
+        })
+
     app.listen(5007, () => {
         console.log(5007)
     })
