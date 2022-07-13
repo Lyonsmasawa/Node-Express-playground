@@ -26,8 +26,11 @@ const app = express()
 
 // example app
     const path = require('path')
+    
+    app.use(express.static('./public')) // niiiicccceeee - convention of calling the folder public - no setting up url for each static file plus the content type and so on - express.static is a middleware made for this
+
     app.get('/', (req, res) => {
-        res.sendFile(path.resolve(__dirname,'./http.html'))
+        res.sendFile(path.resolve(__dirname,'../http.html'))
     })
 
     app.all('*', (req, res) => {
