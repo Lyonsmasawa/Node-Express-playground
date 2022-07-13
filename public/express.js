@@ -47,3 +47,5 @@ app.listen(5005, () => {
 // we use express in two ways - set up APIs or templates with ServerSide rendering
 // in Express or HTTP when we talk about API we mean setting up a http interface to interact with our data
 // - data is sent using JSON and we will use res.json() which will set up proper content type and stringify our data and the other flavour we have is ssr where we set up templates and send back entire html and css and js ourselves using res.render() method
+        // API - json, send data, res.json
+        // SSR - template, send template, res.render()
