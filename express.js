@@ -15,6 +15,14 @@ app.get('/', (req, res) => {
     res.send('home page')
 })
 
+app.get('/about', (req, res) => {
+    res.send('about page')
+})
+
+app.all('*', (req, res) => {
+    res.status(404).send('<h1>Oops! not found</h1>')
+})
+
 app.listen(5005, () => {
     console.log("server running")
 })
