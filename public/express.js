@@ -65,6 +65,14 @@ const app = express()
     // })
 
     // Params, Query string
+    app.get('/api/products', (req, res) => {
+        // res.json(products) // sends everything
+        const newProducts = products.map((product) => {
+            const {id, name, image} = product;
+            return {id, name, image}
+        })
+        res.json(newProducts);
+    })
 
     app.listen(5007, () => {
         console.log(5007)
