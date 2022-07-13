@@ -101,8 +101,25 @@ const app = express()
 
     // Query parameters - used to send small amounts of info to the server using urls
         app.get('/api/v1/query', (req,res) => {
-            console.log("query")
-            res.send("query works")
+            console.log(req.query)
+            const {search, limit} = req.query
+            let sortedProducts = [...products]
+
+            if (search) {
+                sortedProducts = sortedProducts.filter((product) => {
+                    return product.name.startsWith(search)
+                })
+            }
+
+            if (limit) {
+                sortedProducts = sortedProducts.slice(0, Number(limit))
+            }
+
+            if (sortedProducts < 1) {
+                res.status(200).send('no products match your search')
+            }
+
+            res.status(200).json(sortedProducts)
         })
 
     app.listen(5007, () => {
