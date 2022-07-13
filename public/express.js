@@ -32,7 +32,7 @@ const app = express()
 
     // app.get('/', (req, res) => {
         // res.sendFile(path.resolve(__dirname,'../http.html')) or
-        // you can just dump all the html to static files folder and by default the index is the root and will be sent when a user hits the page so we dont have to even set it up
+        // you can just dump all the html to static files folder and by default the index.html is the root and will be sent when a user hits the page so we dont have to even set it up - has to be named index
     // })
 
     app.all('*', (req, res) => {
