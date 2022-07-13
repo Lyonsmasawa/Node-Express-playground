@@ -27,7 +27,7 @@ const app = express()
 // example app
     const path = require('path')
     
-    app.use(express.static('./public')) // niiiicccceeee - convention of calling the folder public - no setting up url for each static file plus the content type and so on - express.static is a middleware made for this
+    // app.use(express.static('./public')) // niiiicccceeee - convention of calling the folder public - no setting up url for each static file plus the content type and so on - express.static is a middleware made for this
     // static files are files that the server doesn't have to change e.g images, stylesheets and js(dynamic on browser but on server side static).
 
     // app.get('/', (req, res) => {
@@ -39,9 +39,9 @@ const app = express()
     //     res.status(404).send('<h1>Oops! not found</h1>')
     // })
 
-app.listen(5005, () => {
-    console.log("server running on 5005...")
-})
+// app.listen(5005, () => {
+//     console.log("server running on 5005...")
+// })
 
 //  API vs SSR
 // we use express in two ways - set up APIs or templates with ServerSide rendering
@@ -54,10 +54,16 @@ app.listen(5005, () => {
 // - any front end app can access our data by making a request and use it. send in form of JSON
 //  JSON basics
     const {products} = require('./data')
+
+    app.get('/', (req, res) => {
+        res.send('<h1>Home Page </h1>')
+    })
     app.get('/data', (req, res) => {
         // res.json([{name:'Lyons'}, {name: 'Albert'}])
         res.json(products)
     })
+
+    // Params, Query string
 
     app.listen(5007, () => {
         console.log(5007)
