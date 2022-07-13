@@ -24,7 +24,17 @@ const app = express()
     //     res.status(404).send('<h1>Oops! not found</h1>')
     // })
 
+// example app
+    const path = require('path')
+    app.get('/', (req, res) => {
+        res.sendFile(path.resolve(__dirname,'./http.html'))
+    })
+
+    app.all('*', (req, res) => {
+        res.status(404).send('<h1>Oops! not found</h1>')
+    })
+
 app.listen(5005, () => {
-    console.log("server running")
+    console.log("server running on 5005...")
 })
 
