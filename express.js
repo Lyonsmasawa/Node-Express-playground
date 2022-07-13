@@ -11,7 +11,9 @@ const app = express()
 // app.use -- for middleware
 // app.listen -- port to listen for communication
 
-
+app.get('/', (req, res) => {
+    res.send('home page')
+})
 
 app.listen(5005, () => {
     console.log("server running")
