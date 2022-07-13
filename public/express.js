@@ -71,7 +71,7 @@ const app = express()
             const {id, name, image} = product;
             return {id, name, image}
         })
-        res.json(newProducts);
+        res.json(newProducts); // sends specific details
     })
 
     app.listen(5007, () => {
