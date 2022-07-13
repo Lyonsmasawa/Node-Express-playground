@@ -99,6 +99,9 @@ const app = express()
             res.send("awesome")
         })
 
+    // Query parameters - used to send small amounts of info to the server using urls
+        
+
     app.listen(5007, () => {
         console.log(5007)
     })
