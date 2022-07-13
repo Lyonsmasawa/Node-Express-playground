@@ -78,7 +78,7 @@ const app = express()
         // simple logic
         // app.get('/api/products/1', (req, res) => {
         //     // res.json(products) // sends everything
-        //     const singleProduct = products.find((product) => product.id == 1)
+        //     const singleProduct = products.find((product) => product.id === 1)
         //     res.json(singleProduct); // sends specific details
         // })
 
@@ -86,7 +86,8 @@ const app = express()
         app.get('/api/products/:productID', (req, res) => {
             // res.json(products) // sends everything
             console.log(req.params)
-            const singleProduct = products.find((product) => product.id == 1)
+            const {productID} = req.params
+            const singleProduct = products.find((product) => product.id === Number(productID))
             res.json(singleProduct); // sends specific details
         })
 
