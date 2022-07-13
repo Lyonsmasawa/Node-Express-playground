@@ -53,9 +53,10 @@ app.listen(5005, () => {
 // API 
 // - any front end app can access our data by making a request and use it. send in form of JSON
 //  JSON basics
-
+    const {products} = require('./data')
     app.get('/data', (req, res) => {
-        res.json([{name:'Lyons'}, {name: 'Albert'}])
+        // res.json([{name:'Lyons'}, {name: 'Albert'}])
+        res.json(products)
     })
 
     app.listen(5007, () => {
