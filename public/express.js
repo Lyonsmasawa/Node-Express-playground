@@ -116,7 +116,8 @@ const app = express()
             }
 
             if (sortedProducts < 1) {
-                res.status(200).send('no products match your search')
+                // res.status(200).send('no products match your search')
+                return res.status(200).json({success: true, data: []}) // common approach
             }
 
             res.status(200).json(sortedProducts)
