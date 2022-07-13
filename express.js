@@ -11,3 +11,6 @@ const app = express()
 // app.use
 // app.listen
 
+app.listen(5005, () => {
+    console.log("server running")
+})
