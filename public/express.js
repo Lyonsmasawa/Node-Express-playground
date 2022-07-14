@@ -141,6 +141,8 @@ const app = express()
     // outsource it
     const logger = require('./logger')
     const authorize = require('./authorize')
+    const morgan = require('morgan')
+    A
 
 app.get('/', logger, (req, res) => {
         // manual without middleware illustration --->
