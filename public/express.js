@@ -142,7 +142,7 @@ const app = express()
     const logger = require('./logger')
     const authorize = require('./authorize')
     const morgan = require('morgan')
-    A
+    app.use(morgan('tiny'))
 
 app.get('/', logger, (req, res) => {
         // manual without middleware illustration --->
