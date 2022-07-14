@@ -14,8 +14,12 @@ app.get('/api/people', (req, res) => {
     res.status(200).json({success: true, data:people})
 })
 
-// POST -send data
+// POST - send data
+// PARSE form data - use middleware
+app.use(express.urlencoded({extended: false}))
+
 app.post('/login', (req, res) => {
+    console.log(req.body)
     res.send('POST')
 })
 
