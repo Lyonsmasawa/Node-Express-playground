@@ -138,6 +138,8 @@ const app = express()
     //     console.log(method, url, time)
     //     next() //-- when you work with middleware you have to pass the baton to the next function unless you are terminating by sending the result yourself (a must)
     // }
+    // outsource it
+    const logger = require('./logger')
 
 app.get('/', logger, (req, res) => {
         // manual without middleware illustration --->
@@ -149,6 +151,13 @@ app.get('/', logger, (req, res) => {
 })
 
 app.get('/about', logger, (req, res) => {
+    res.send("about")
+})
+
+// app.use can help us avoid writing the logger in each route
+app.use(logger) // all routes will have the logger
+
+app.get('/about/test', (req, res) => {
     res.send("about")
 })
 
