@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended: false})) // get the data we are being sent
 
 app.post('/login', (req, res) => {
     console.log(req.body)
-    const {name} = req.body
+    const {name} = req.body 
     if(name){
         return res.status(200).send(`welcome ${name}`)
     }else {
