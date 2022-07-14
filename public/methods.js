@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 let {people} = require('./data')
 
-    // GET - read data
+// GET - read data
 
 
 app.listen(5008, () => {
