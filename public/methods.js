@@ -20,7 +20,12 @@ app.use(express.urlencoded({extended: false}))
 
 app.post('/login', (req, res) => {
     console.log(req.body)
-    res.send('POST')
+    const {name} = req.body
+    if(name){
+        return res.status(200).send(`welcome ${name}`)
+    }else {
+        res.status(401).send("please provide cedentials")
+    }
 })
 
 app.listen(5008, () => {
