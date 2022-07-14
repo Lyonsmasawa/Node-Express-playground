@@ -140,6 +140,7 @@ const app = express()
     // }
     // outsource it
     const logger = require('./logger')
+    const authorize = require('./authorize')
 
 app.get('/', logger, (req, res) => {
         // manual without middleware illustration --->
@@ -155,7 +156,7 @@ app.get('/about', logger, (req, res) => {
 })
 
 // app.use can help us avoid writing the logger in each route
-app.use(logger) // all routes will have the logger - we can also add a path app.use('/api', logger) - apply to any route after that path
+app.use([ authorize, logger]) // all routes will have the logger - we can also add a path app.use('/api', logger) - apply to any route after that path
 
 app.get('/about/test', (req, res) => {
     res.send("about")
