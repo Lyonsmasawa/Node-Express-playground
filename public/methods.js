@@ -14,6 +14,11 @@ app.get('/api/people', (req, res) => {
     res.status(200).json({success: true, data:people})
 })
 
+// POST -send data
+app.post('/login', (req, res) => {
+    res.send('POST')
+})
+
 app.listen(5008, () => {
     console.log('listening on 5008')
 })
