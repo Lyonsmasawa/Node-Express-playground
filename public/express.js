@@ -165,6 +165,10 @@ app.get('/about/test', (req, res) => {
     res.send("about")
 })
 
+// HTTP METHODS
+
+
+
 app.listen(5007, () => {
     console.log(5007)
 })
