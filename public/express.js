@@ -156,7 +156,8 @@ app.get('/about', logger, (req, res) => {
 })
 
 // app.use can help us avoid writing the logger in each route
-app.use([ authorize, logger]) // all routes will have the logger - we can also add a path app.use('/api', logger) - apply to any route after that path
+app.use([ authorize, logger]) // all routes will have the logger - we can also add a path app.use('/api', logger) - apply to any route after that path 
+// we can do functionality with our middleware
 
 app.get('/about/test', (req, res) => {
     res.send("about")
