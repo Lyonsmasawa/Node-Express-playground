@@ -24,7 +24,7 @@ app.post('/login', (req, res) => {
     if(name){
         return res.status(200).send(`welcome ${name}`)
     }else {
-        res.status(401).send("please provide cedentials")
+        res.status(401).send("please provide credentials")
     }
 })
 
