@@ -166,7 +166,7 @@ app.get('/about/test', (req, res) => {
 })
 
 // HTTP METHODS
-
+    // GET
 
 
 app.listen(5007, () => {
