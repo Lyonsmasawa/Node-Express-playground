@@ -41,7 +41,6 @@ app.put('/api/people/:id', (req, res) => {
         })
         return res.status(200).json({success: true, data: newPeople})
     }
-    res.send('hello world')
 })
 
 
