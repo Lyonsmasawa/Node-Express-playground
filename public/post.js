@@ -25,11 +25,21 @@ app.post('/api/people', (req, res) => {
 })
 
 // for update
-app.put('/api/people/:ID', (req, res) => {
+app.put('/api/people/:id', (req, res) => {
     const { id } = req.params
     const { name } =req.body
-
-    res.send()
+    
+    const person = people.find((person) => person.id === Number(id))
+    if (!person) {
+        return res.status(400).json({success:false, msg:'please provide name'})
+    } else {
+        const newPeople = people.map((person) => {
+            if(person.id === Number(id) {
+                person.name = name
+            })
+        })
+    }
+    res.send('hello world')
 })
 
 
