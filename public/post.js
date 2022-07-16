@@ -10,14 +10,14 @@ app.get('/api/people', (req, res) => {
 })
 
 // parse json
-app.use(express.json()) // access data sent in http reques
+app.use(express.json()) // access data sent in http request
 
 app.post('/api/people', (req, res) => {
     const {name} = req.body
     if (!name) {
         return res.status(400).json({success:false, msg:'please provide name'})
     } else {
-        return res.status(201).json({success:true, people:name})
+        return res.status(201).json({success:true, person:name})
     }
 })
 
