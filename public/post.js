@@ -34,10 +34,12 @@ app.put('/api/people/:id', (req, res) => {
         return res.status(400).json({success:false, msg:'please provide name'})
     } else {
         const newPeople = people.map((person) => {
-            if(person.id === Number(id) {
+            if(person.id === Number(id)) {
                 person.name = name
-            })
+            }
+            return person
         })
+        return res.status(200).json({success: true, data: newPeople})
     }
     res.send('hello world')
 })
