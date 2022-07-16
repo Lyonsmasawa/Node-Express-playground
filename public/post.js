@@ -26,7 +26,9 @@ app.post('/api/people', (req, res) => {
 
 // for update
 app.put('/api/people/:ID', (req, res) => {
-    
+    const { id } = req.params
+    const { name } =req.body
+
     res.send()
 })
 
