@@ -17,4 +17,19 @@
     </form>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    const result = document.querySelector('.result')
+    
+    const fetchPeople = async () => {
+        try {
+            const data = await axios.get('./api/people')\
+
+            const people = data.data.map((person) => {
+                return `<h5> ${person.name} </h5>`
+            });
+        } catch (error) {
+            
+        }
+    }
+</script>
 </html>
