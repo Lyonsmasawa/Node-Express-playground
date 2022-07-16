@@ -52,7 +52,7 @@ app.delete('/api/people/:id', (req, res) => {
             if(person.id === Number(id)) {
                 person.name = name
             }
-            return person
+            return "DELETE"
         })
         return res.status(200).json({success: true, data: newPeople})
     }
