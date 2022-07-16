@@ -16,7 +16,7 @@ app.get('/api/people', (req, res) => {
 
 // POST - send data
 // PARSE form data - use middleware
-app.use(express.urlencoded({extended: false})) // get the data we are being sent - stored values in req.body
+app.use(express.urlencoded({extended: false})) // get the data we are being sent - stored values in req.body - allows us to access the data
 
 app.post('/login', (req, res) => {
     console.log(req.body)
@@ -31,3 +31,4 @@ app.post('/login', (req, res) => {
 app.listen(5008, () => {
     console.log('listening on 5008')
 })
+ 
