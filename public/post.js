@@ -17,9 +17,8 @@ app.post('/api/people', (req, res) => {
     if (!name) {
         return res.status(400).json({success:false, msg:'please provide name'})
     } else {
-        return res.status(400).json({success:true, })
+        return res.status(201).json({success:true, people:name})
     }
-    res.status(201).send('success')
 })
 
 app.get('/', (req, res) => {
