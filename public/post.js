@@ -61,3 +61,6 @@ app.delete('/api/people/:id', (req, res) => {
 app.listen(5009, () => {
     console.log('listening on 5009')
 })
+
+// EXPRESS routers
+// app.use()
