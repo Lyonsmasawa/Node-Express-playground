@@ -12,8 +12,8 @@
     <h6>hello world</h6>
     <form>
         <label for="name">enter name</label>
-        <input type="text" name="name" id="name" autocomplete="false">
-        <button type="submit">submit</button>
+        <input type="text" name="name" id="name" class="form-input" autocomplete="false">
+        <button type="submit" class="submit-btn">submit</button>
     </form>
     <div class="result"></div>
 </body>
@@ -32,5 +32,15 @@
             result.innerHTML = `<div> Can't fetch data</div>`
         }
     }
+    fetchPeople()
+    // submit form
+    const btn = document.querySelector('.submit-btn')
+    const input = document.querySelector('.form-input')
+    const formAlert = document.querySelector('.form-alert')
+    btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+
+    })
+
 </script>
 </html>
