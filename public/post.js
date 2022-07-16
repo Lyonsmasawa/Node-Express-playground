@@ -8,7 +8,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './post-js.html'))
 })
 
-=
 app.get('/api/people', (req, res) => {
     res.status(200).json({success: true, data: people})
 })
@@ -23,6 +22,12 @@ app.post('/api/people', (req, res) => {
     } else {
         return res.status(201).json({success:true, data: [...people, name]})
     }
+})
+
+// for update
+app.put('/api/people/:ID', (req, res) => {
+    
+    res.send()
 })
 
 
