@@ -7,4 +7,6 @@
 
 // controllers 
 // create a folder - controllers
-// 
+// create a file
+    // create all the needed functions then export
+    // then just import and call them in the sever methods
