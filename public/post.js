@@ -4,6 +4,9 @@ const path = require('path')
 
 app.use(express.static('../public'))
 
+app.get('/api/people', (req, res) => {
+    res.status(200).json({success: true, data: people})
+})
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './post-js.html'))
 })
