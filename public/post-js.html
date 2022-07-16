@@ -39,7 +39,17 @@
     const formAlert = document.querySelector('.form-alert')
     btn.addEventListener('click', async (e) => {
         e.preventDefault();
+        const nameValue = input.value
 
+        try {
+            const data = await axios.get('./api/people', {name: nameValue})
+
+            const people = data.data.map((person) => {
+                return `<h5> ${person.name} </h5>`
+            });
+        } catch (error) {
+            result.innerHTML = `<div> Can't fetch data</div>`
+        }
     })
 
 </script>
