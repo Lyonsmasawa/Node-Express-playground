@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../public/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -18,17 +18,18 @@
     <div class="result"></div>
     <div class="form-alert"></div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js" integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     const result = document.querySelector('.result')
     
     const fetchPeople = async () => {
         try {
-            const data = await axios.get('./api/people')
+            const data = await axios.get('/api/people')
 
             const people = data.data.map((person) => {
                 return `<h5> ${person.name} </h5>`
             });
+            result.innerHTML = people.join('');
         } catch (error) {
             result.innerHTML = `<div> Can't fetch data</div>`
         }
@@ -43,9 +44,9 @@
         const nameValue = input.value
 
         try {
-            const { data } = await axios.post('./api/people', {name: nameValue})
+            const { data } = await axios.post('/api/people', {name: nameValue})
             const h5 = document.createElement('h5');
-            h5.textContent() = data;
+            h5.textContent() = data.person;
             result.appendChild(h5)
 
         } catch (error) {
