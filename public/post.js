@@ -48,7 +48,7 @@ app.delete('/api/people/:id', (req, res) => {
     if (!person) {
         return res.status(400).json({success:false, msg:'no person with name'})
     } else {
-        const newPeople = people.map((person) => {
+        const person = people.filter((person) => {
             if(person.id === Number(req.params.id)) {
                 person.name = name
             }
