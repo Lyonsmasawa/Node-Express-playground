@@ -43,10 +43,7 @@
 
         try {
             const data = await axios.get('./api/people', {name: nameValue})
-
-            const people = data.data.map((person) => {
-                return `<h5> ${person.name} </h5>`
-            });
+            const h5 = document.createElement('h5');
         } catch (error) {
             result.innerHTML = `<div> Can't fetch data</div>`
         }
