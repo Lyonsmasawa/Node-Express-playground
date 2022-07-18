@@ -14,4 +14,4 @@ const { Router } = require("express");
     // then just import and call them in the sever methods
 
 // another way to write methods
-// Router.route('/').get(getPeople).post(createPerson)  - you can set links
+// Router.route('/').get(getPeople).post(createPerson)  - you can set links in a simpler way
